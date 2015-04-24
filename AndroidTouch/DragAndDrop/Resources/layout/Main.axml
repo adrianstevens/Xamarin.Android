@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    android:columnWidth="360dp"
+    android:orientation="vertical"
+    android:rowCount="2"
+    android:stretchMode="columnWidth"
+    android:useDefaultMargins="true"
+    android:alignmentMode="alignMargins"
+    android:padding="5dp">
+    <LinearLayout
+        android:id="@+id/boxTopLeft"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_row="0"
+        android:background="@drawable/Shape">
+        <ImageView
+            android:id="@+id/imgIcon1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/boxTopRight"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:background="@drawable/Shape">
+        <ImageView
+            android:id="@+id/imgIcon2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/boxBottomLeft"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:background="@drawable/Shape">
+        <ImageView
+            android:id="@+id/imgIcon3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/boxBottomRight"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:background="@drawable/Shape">
+        <ImageView
+            android:id="@+id/imgIcon4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/icon" />
+    </LinearLayout>
+</GridLayout>
