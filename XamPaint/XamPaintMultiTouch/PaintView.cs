@@ -90,7 +90,7 @@ namespace XamPaint
 
 			switch (e.Action & MotionEventActions.Mask) 
 			{
-			case MotionEventActions.Down:
+			case MotionEventActions.Down://primary finger
 				primaryId = e.GetPointerId (e.ActionIndex);
 				drawPath.MoveTo(x1, y1);
 				break;
@@ -116,14 +116,14 @@ namespace XamPaint
 				drawCanvas.DrawPath(drawPath, drawPaint);
 				drawPath.Reset();
 				break;
-			case MotionEventActions.PointerDown:
+			case MotionEventActions.PointerDown://a non-primary finger has touched the screen
 				secondaryId = e.GetPointerId (e.ActionIndex);
 				bTwoFinger = true;
 				x2 = e.GetX (secondaryId);
 				y2 = e.GetY (secondaryId);
 				drawPath2.MoveTo (x2, y2);
 				break;
-			case MotionEventActions.PointerUp:
+			case MotionEventActions.PointerUp://a non-primary finger has stopped touching the screen
 				bTwoFinger = false;
 				drawCanvas.DrawPath(drawPath2, drawPaint2);
 				drawPath2.Reset();

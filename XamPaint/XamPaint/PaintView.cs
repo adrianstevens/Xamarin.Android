@@ -34,7 +34,7 @@ namespace XamPaint
 		{
 			drawPath = new Path();
 
-			drawPaint = new Paint () 
+			drawPaint = new Paint() 
 			{
 				Color = Color.Aqua,
 				AntiAlias = true,
@@ -59,28 +59,26 @@ namespace XamPaint
 
 		protected override void OnDraw (Canvas canvas)
 		{
-		//	base.OnDraw (canvas);
-
 			canvas.DrawBitmap(canvasBitmap, 0, 0, canvasPaint);
 			canvas.DrawPath(drawPath, drawPaint);
 		} 
 
-		public override bool OnTouchEvent (MotionEvent e)
+		public override bool OnTouchEvent (MotionEvent mEvent)
 		{
-			var x = e.GetX();
-			var y = e.GetY();
+			var x = mEvent.GetX();
+			var y = mEvent.GetY();
 
-			switch (e.Action) 
+			switch (mEvent.ActionMasked) 
 			{
 			case MotionEventActions.Down:
+				drawPath.Reset();
 				drawPath.MoveTo(x, y);
 				break;
 			case MotionEventActions.Move:
 				drawPath.LineTo(x, y);
 				break;
 			case MotionEventActions.Up:
-				drawCanvas.DrawPath(drawPath, drawPaint);
-				drawPath.Reset();
+				drawPath.LineTo(x, y);
 				break;
 			default:
 				return false;
