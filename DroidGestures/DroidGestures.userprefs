@@ -1,0 +1,5 @@
+﻿<Properties StartupItem="RotationGesture/RotationGesture.csproj">
+  <MonoDevelop.Ide.ItemProperties.ScaleGesture AndroidDesignerPreferredDevice="Nexus 4" />
+  <MonoDevelop.Ide.ItemProperties.ScrollGesture AndroidDesignerPreferredDevice="Nexus 4" />
+  <MonoDevelop.Ide.ItemProperties.RotationGesture AndroidDesignerPreferredDevice="Nexus 4" />
+</Properties>

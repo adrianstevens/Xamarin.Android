@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScaleGesture", "ScaleGestur
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrollGesture", "ScrollGesture\ScrollGesture.csproj", "{ABF39370-0DA8-4607-B980-6D930A6F852C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RotationGesture", "RotationGesture\RotationGesture.csproj", "{B89E0EF9-737A-4555-82DE-0A372AE95350}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,5 +21,9 @@ Global
 		{ABF39370-0DA8-4607-B980-6D930A6F852C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ABF39370-0DA8-4607-B980-6D930A6F852C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ABF39370-0DA8-4607-B980-6D930A6F852C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B89E0EF9-737A-4555-82DE-0A372AE95350}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B89E0EF9-737A-4555-82DE-0A372AE95350}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B89E0EF9-737A-4555-82DE-0A372AE95350}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B89E0EF9-737A-4555-82DE-0A372AE95350}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -56,7 +56,7 @@ namespace ScrollGesture
 
 		bool GestureDetector.IOnGestureListener.OnDown (MotionEvent e)
 		{
-			return true;
+			return false;
 		}
 		bool GestureDetector.IOnGestureListener.OnFling (MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)
 		{
