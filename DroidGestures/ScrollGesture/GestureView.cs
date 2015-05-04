@@ -5,14 +5,14 @@ using Android.Graphics;
 using Android.Graphics.Drawables;
 using Android.Util;
 
-namespace ScaleGesture
+namespace ScrollGesture
 {
-	public class GestureView : View, Android.Views.ScaleGestureDetector.IOnScaleGestureListener
+	public class GestureView : View, Android.Views.GestureDetector.IOnGestureListener
 	{
 		private Drawable icon;
-		private ScaleGestureDetector scaleDetector;
+		private GestureDetector detector;
 
-		private float scaleFactor = 1.0f;
+		float deltaX, deltaY;
 
 		public GestureView (Context context) : base(context, null, 0)
 		{
@@ -34,12 +34,12 @@ namespace ScaleGesture
 			icon = context.Resources.GetDrawable (Resource.Drawable.xamlogo);
 			icon.SetBounds (0, 0, icon.IntrinsicWidth, icon.IntrinsicHeight);
 
-			scaleDetector = new ScaleGestureDetector (context, this);
+			detector = new GestureDetector (context, this);
 		}
 
 		public override bool OnTouchEvent (MotionEvent e)
 		{
-			scaleDetector.OnTouchEvent (e);
+			detector.OnTouchEvent (e);
 
 			return true;
 		}
@@ -48,30 +48,39 @@ namespace ScaleGesture
 		{
 			base.OnDraw (canvas);
 			canvas.Save ();
-			canvas.Scale (scaleFactor, scaleFactor);
+	
+			canvas.Translate (deltaX, deltaY);
 			icon.Draw (canvas);
 			canvas.Restore ();
 		}
 
-		bool ScaleGestureDetector.IOnScaleGestureListener.OnScale (ScaleGestureDetector detector)
+		bool GestureDetector.IOnGestureListener.OnDown (MotionEvent e)
 		{
-			this.scaleFactor *= detector.ScaleFactor;
-
-			Invalidate ();
-
 			return true;
 		}
-
-		bool ScaleGestureDetector.IOnScaleGestureListener.OnScaleBegin (ScaleGestureDetector detector)
+		bool GestureDetector.IOnGestureListener.OnFling (MotionEvent e1, MotionEvent e2, float velocityX, float velocityY)
 		{
-			return true; //so the detector continues to recognize the gesture
+			return false;
 		}
-
-		void ScaleGestureDetector.IOnScaleGestureListener.OnScaleEnd (ScaleGestureDetector detector)
+		void GestureDetector.IOnGestureListener.OnLongPress (MotionEvent e)
 		{
 		}
+	
+		bool GestureDetector.IOnGestureListener.OnScroll (MotionEvent e1, MotionEvent e2, float distanceX, float distanceY)
+		{
+			deltaX -= distanceX;
+			deltaY -= distanceY;
 
-
+			Invalidate ();
+			return true;
+		}
+		void GestureDetector.IOnGestureListener.OnShowPress (MotionEvent e)
+		{
+		}
+		bool GestureDetector.IOnGestureListener.OnSingleTapUp (MotionEvent e)
+		{
+			return false;
+		}
 	}
 }
 
