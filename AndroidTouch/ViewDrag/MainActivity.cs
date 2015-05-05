@@ -7,6 +7,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Android.Util;
+using Android.Graphics;
 
 namespace ViewDrag
 {
@@ -21,45 +22,25 @@ namespace ViewDrag
 
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Main);
-
 			imgIcon = FindViewById<ImageView> (Resource.Id.imgIcon);
 		}
 
-		bool bDrag = false;
 		float relativeX, relativeY;
 		public override bool OnTouchEvent (MotionEvent e)
 		{
-			var x = e.RawX;
-			var y = e.RawY;
+			var x = e.GetX ();
+			var y = e.GetY();
 
 			switch (e.Action) 
 			{
 			case MotionEventActions.Down:
-				//are we within the bounds of imgIcon?
-		//		if (imgIcon.Left < x && imgIcon.Right > x &&
-		//			imgIcon.Top > y && imgIcon.Bottom < y) 
-				{
-					bDrag = true;
-					relativeX = x - imgIcon.Left;
-					relativeY = y - imgIcon.Top;
-					Log.Debug ("Up", "Within image");
-				}
+				relativeX = x - imgIcon.Left;
+				relativeY = y - imgIcon.Top;
 				break;
 			case MotionEventActions.Move:
-				if (bDrag) {
-					RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) imgIcon.LayoutParameters;
-
-					layoutParams.LeftMargin = (int)(x - relativeX);
-					layoutParams.TopMargin = (int)(y - relativeY);
-					layoutParams.RightMargin = imgIcon.Left + imgIcon.Width;
-					layoutParams.BottomMargin = imgIcon.Top + imgIcon.Height;
-
-					imgIcon.LayoutParameters = layoutParams;
-				}
+				imgIcon.TranslationX = x - relativeX;
+				imgIcon.TranslationY = y - relativeY;
 				break;
-			case MotionEventActions.Up:
-				bDrag = false;
-				break;				
 			}
 			return true;
 		}
