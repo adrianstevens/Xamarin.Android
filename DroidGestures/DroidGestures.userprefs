@@ -1,4 +1,4 @@
-﻿<Properties StartupItem="ScrollGesture2/ScrollGesture2.csproj">
+﻿<Properties StartupItem="MultiGesture/MultiGesture.csproj">
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
@@ -13,10 +13,11 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus 4 (KK)" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.ScrollGesture AndroidDesignerPreferredDevice="Nexus 4" />
-  <MonoDevelop.Ide.ItemProperties.RotationGesture AndroidDesignerPreferredDevice="Nexus 4" />
-  <MonoDevelop.Ide.ItemProperties.RotationGesture2 AndroidDesignerPreferredDevice="Nexus 4" />
   <MonoDevelop.Ide.ItemProperties.ScaleGesture2 AndroidDesignerPreferredDevice="Nexus 4" />
-  <MonoDevelop.Ide.ItemProperties.ScaleGesture AndroidDesignerPreferredDevice="Nexus 4" />
+  <MonoDevelop.Ide.ItemProperties.RotationGesture2 AndroidDesignerPreferredDevice="Nexus 4" />
+  <MonoDevelop.Ide.ItemProperties.RotationGesture AndroidDesignerPreferredDevice="Nexus 4" />
+  <MonoDevelop.Ide.ItemProperties.ScrollGesture AndroidDesignerPreferredDevice="Nexus 4" />
   <MonoDevelop.Ide.ItemProperties.ScrollGesture2 AndroidDesignerPreferredDevice="Nexus 4" />
+  <MonoDevelop.Ide.ItemProperties.ScaleGesture AndroidDesignerPreferredDevice="Nexus 4" />
+  <MonoDevelop.Ide.ItemProperties.MultiGesture AndroidDesignerPreferredDevice="Nexus 4" />
 </Properties>
