@@ -49,7 +49,6 @@ namespace RotationGesture
 				pId2 = INVALID_ID;
 				break;
 			}
-
 			return true;
 		}
 
@@ -65,18 +64,10 @@ namespace RotationGesture
 
 		float GetAngle (float x1, float y1, float x2, float y2)
 		{
-			double angle = Math.Atan2( (y1 - y2), (x1 - x2) );
+			double angle = Math.Atan2((y1 - y2), (x1 - x2));
 
-			angle = angle * 180 / Math.PI;
-
-			if (angle < -180)
-				angle += 360;
-			if (angle > 180) 
-				angle -= 360;
-			
-			return (float)angle;
+			return (float)(angle * 180 / Math.PI);
 		}
 	}
-
 }
 
