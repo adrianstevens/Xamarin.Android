@@ -25,7 +25,9 @@ namespace ScrollGesture2
 
 			xamLogo = FindViewById<ImageView> (Resource.Id.xamLogo);
 
+			gestureDetector = new GestureDetector (context: this, listener: this);
 			gestureDetector = new GestureDetector (this, this);
+
 		}
 
 		public override bool OnTouchEvent (MotionEvent e)

@@ -29,7 +29,7 @@ namespace ViewDrag
 		public override bool OnTouchEvent (MotionEvent e)
 		{
 			var x = e.GetX ();
-			var y = e.GetY();
+			var y = e.GetY ();
 
 			switch (e.Action) 
 			{
