@@ -8,6 +8,7 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Android.Graphics.Drawables;
+using Android.Util;
 
 namespace DragAndDropEvents
 {
@@ -46,11 +47,10 @@ namespace DragAndDropEvents
 		{
 			var v = sender as View;
 
-			if (v != null && e.Event.Action  == MotionEventActions.Down) //when you tap on one of the views
+			if (v != null && e.Event.Action == MotionEventActions.Down) //when you tap on one of the views
 			{
-				ClipData data = ClipData.NewPlainText("", "");
-				Android.Views.View.DragShadowBuilder shadowBuilder = new View.DragShadowBuilder(v);
-				v.StartDrag(data, shadowBuilder, v, 0);//starting the "Drag"
+				var shadowBuilder = new View.DragShadowBuilder(v);
+				v.StartDrag(null, shadowBuilder, v, 0);
 				v.Visibility = ViewStates.Invisible;
 			} 
 		}
@@ -63,7 +63,9 @@ namespace DragAndDropEvents
 
 			switch (e.Event.Action) 
 			{
-			case DragAction.Started:
+			case DragAction.Location:
+				Log.WriteLine (LogPriority.Debug, "OnDragIcons", 
+					String.Format("View: {0} Location {1}, {2}", v.Id, e.Event.GetX(), e.Event.GetY()));
 				break;
 			case DragAction.Entered:
 				v.Background = drawEnter;

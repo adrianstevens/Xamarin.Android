@@ -30,7 +30,7 @@ namespace RotationGesture
 				break;
 			case MotionEventActions.PointerDown:
 				pId2 = e.GetPointerId (e.ActionIndex);
-				angleOffset = GetAngle (e, pId1, pId2);
+				angleOffset = GetAngle (e, pId1, pId2) - angle;
 				break;
 			case MotionEventActions.Move:
 				if (e.PointerCount != 2)

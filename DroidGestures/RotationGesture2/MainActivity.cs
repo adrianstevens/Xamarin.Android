@@ -36,14 +36,10 @@ namespace RotationGesture2
 			return true;
 		}
 
-		#region IOnRotationGestureListener implementation
-
 		void IOnRotationGestureListener.OnRotate (float angle)
 		{
 			xamLogo.Rotation = angle;
 		}
-
-		#endregion
 	}
 }
 

@@ -1,17 +1,22 @@
-﻿<Properties StartupItem="RotationGesture2/RotationGesture2.csproj">
+﻿<Properties StartupItem="RotationGesture/RotationGesture.csproj">
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="ScrollGesture2/MainActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="MultiGesture/MainActivity.cs">
     <Files>
-      <File FileName="RotationGesture2/MainActivity.cs" Line="1" Column="1" />
-      <File FileName="RotationGesture2/IOnRotationGestureListener.cs" Line="1" Column="1" />
+      <File FileName="MultiGesture/MainActivity.cs" Line="105" Column="4" />
+      <File FileName="RotationGesture2/MainActivity.cs" Line="39" Column="3" />
+      <File FileName="ScrollGesture2/MainActivity.cs" Line="54" Column="4" />
       <File FileName="ScaleGesture2/MainActivity.cs" Line="1" Column="1" />
-      <File FileName="ScrollGesture2/MainActivity.cs" Line="32" Column="3" />
-      <File FileName="RotationGesture2/RotationGestureDetector.cs" Line="8" Column="3" />
+      <File FileName="RotationGesture2/RotationGestureDetector.cs" Line="1" Column="1" />
+      <File FileName="RotationGesture2/IOnRotationGestureListener.cs" Line="1" Column="1" />
+      <File FileName="MultiGesture/RotationGestureDetector.cs" Line="1" Column="1" />
+      <File FileName="RotationGesture/GestureView.cs" Line="1" Column="1" />
+      <File FileName="RotationGesture/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="RotationGesture/Gesture/RotationGestureDetector.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus 4 (KK)" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus 5 (Lollipop)" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.RotationGesture AndroidDesignerPreferredDevice="Nexus 4" />
   <MonoDevelop.Ide.ItemProperties.RotationGesture2 AndroidDesignerPreferredDevice="Nexus 4" />

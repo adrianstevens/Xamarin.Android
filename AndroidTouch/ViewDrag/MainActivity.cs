@@ -34,13 +34,23 @@ namespace ViewDrag
 			switch (e.Action) 
 			{
 			case MotionEventActions.Down:
-				relativeX = x - imgIcon.Left;
-				relativeY = y - imgIcon.Top;
+				imgIcon.ScaleX = imgIcon.ScaleY = 1.4f;
+				imgIcon.Alpha = 0.8f;
+
+
+				relativeX = x - imgIcon.TranslationX;
+				relativeY = y - imgIcon.TranslationY;
 				break;
 			case MotionEventActions.Move:
 				imgIcon.TranslationX = x - relativeX;
 				imgIcon.TranslationY = y - relativeY;
 				break;
+			case MotionEventActions.Up:
+				imgIcon.ScaleX = imgIcon.ScaleY = 1.0f;
+				imgIcon.Alpha = 1.0f;
+				break;
+
+
 			}
 			return true;
 		}
