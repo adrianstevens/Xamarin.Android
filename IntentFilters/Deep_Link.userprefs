@@ -1,0 +1,18 @@
+﻿<Properties StartupItem="Deep_Link.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus 5 (Lollipop)" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="MainActivity.cs">
+    <Files>
+      <File FileName="MainActivity.cs" Line="45" Column="1" />
+      <File FileName="Deep_Link2/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="Deep_Link2/DeepActivity.cs" Line="1" Column="1" />
+      <File FileName="Deep_Link2/Properties/AndroidManifest.xml" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/adrianstevens/Projects/Deep_Link/MainActivity.cs" line="46" column="4" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.Deep__Link2 AndroidDesignerPreferredDevice="Nexus 4" />
+</Properties>

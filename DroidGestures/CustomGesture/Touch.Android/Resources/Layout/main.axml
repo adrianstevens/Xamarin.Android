@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.gesture.GestureOverlayView
+	xmlns:android        ="http://schemas.android.com/apk/res/android"
+	android:id           ="@+id/gov"
+	android:layout_width ="match_parent"
+	android:layout_height="match_parent">
+
+	<ImageView
+		android:src           ="@drawable/prompt"
+		android:layout_width  ="200dp"
+		android:layout_height ="200dp"
+		android:id            ="@+id/imageView"
+		android:layout_gravity="center" />
+
+</android.gesture.GestureOverlayView>
