@@ -1,0 +1,18 @@
+﻿<Properties StartupItem="HelloJavaScript.csproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Android.Nexus 4 (Jelly Bean)" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="../../Downloads/google-code-prettify/src/prettify.css">
+    <Files>
+      <File FileName="MainActivity.cs" Line="25" Column="4" />
+      <File FileName="../WebDroid/MainActivity.cs" Line="27" Column="4" />
+      <File FileName="Assets/hello.html" Line="14" Column="52" />
+      <File FileName="../../Downloads/google-code-prettify/js-modules/prettify.js" Line="215" Column="16" />
+      <File FileName="../../xam/XamarinUniversity/Course_Materials/AND101 - Introduction to Xamarin.Android/Lab Materials/parts/res/js/prettify.js" Line="1" Column="1" />
+      <File FileName="../../Downloads/google-code-prettify/src/prettify.css" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.HelloJavaScript AndroidDesignerPreferredDevice="Nexus 4" />
+</Properties>

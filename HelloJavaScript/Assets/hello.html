@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This example calls a function which performs a calculation, and returns the result:</p>
+
+<p id="demo"></p>
+
+<script>
+function myMultiply(a, b) {
+    return a * b;
+}
+function stringify(a) {
+	return "<em>" + "<font color='green'>" + "The Answer is: " + a + "</font>" + "</em>";
+}
+document.getElementById("demo").innerHTML = stringify(myMultiply(4,5))
+</script>
+
+</body>
+</html>
