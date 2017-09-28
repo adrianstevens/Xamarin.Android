@@ -22,12 +22,13 @@ namespace WatchApp
             base.OnCreate(bundle);
 
             client = new GoogleApiClient.Builder(this, this, this)
-                            .AddApi(WearableClass.Api)
+                            .AddApi(WearableClass.API)
                             .Build();
 
             SetContentView(Resource.Layout.Main);
 
             var v = FindViewById<WatchViewStub>(Resource.Id.watch_view_stub);
+
             v.LayoutInflated += delegate
             {
                 Button button = FindViewById<Button>(Resource.Id.myButton);
@@ -53,7 +54,7 @@ namespace WatchApp
             {
                 var request = PutDataMapRequest.Create(syncPath);
                 var map = request.DataMap;
-                map.PutString("Message", "Vinz says Hello from Wearable!");
+                map.PutString("Message", "Hello Wearable!");
                 map.PutLong("UpdatedAt", DateTime.UtcNow.Ticks);
                 WearableClass.DataApi.PutDataItem(client, request.AsPutDataRequest());
             }
@@ -63,11 +64,14 @@ namespace WatchApp
             }
 
         }
+
         protected override void OnStart()
         {
-            base.OnStart();
             client.Connect();
+
+            base.OnStart();
         }
+
         public void OnConnected(Bundle p0)
         {
             WearableClass.DataApi.AddListener(client, this);
@@ -86,8 +90,9 @@ namespace WatchApp
 
         protected override void OnStop()
         {
-            base.OnStop();
             client.Disconnect();
+
+            base.OnStop();
         }
 
         public void OnDataChanged(DataEventBuffer dataEvents)
@@ -101,9 +106,5 @@ namespace WatchApp
 
             //do work here
         }
-
-       
     }
 }
-
-
