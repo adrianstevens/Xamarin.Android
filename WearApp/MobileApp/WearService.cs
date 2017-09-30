@@ -6,7 +6,7 @@ using Android.Runtime;
 using Android.Support.V4.Content;
 using System.Linq;
 
-namespace MobileApp
+namespace WatchApp
 {
     [Service]
     [IntentFilter(new[] { "com.google.android.gms.wearable.BIND_LISTENER" })]
@@ -19,7 +19,7 @@ namespace MobileApp
         {
             base.OnCreate();
             client = new GoogleApiClient.Builder(this.ApplicationContext)
-                    .AddApi(WearableClass.Api)
+                    .AddApi(WearableClass.API)
                     .Build();
 
             client.Connect();

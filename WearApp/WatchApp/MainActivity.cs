@@ -2,8 +2,6 @@
 using Android.App;
 using Android.Widget;
 using Android.OS;
-using Android.Support.Wearable.Views;
-using Android.Support.V4.App;
 using Android.Gms.Common.Apis;
 using Android.Gms.Wearable;
 using System.Linq;
@@ -14,6 +12,7 @@ namespace WatchApp
     [Activity(Label = "WatchApp", MainLauncher = true, Icon = "@drawable/icon")]
     public class MainActivity : Activity, IDataApiDataListener, GoogleApiClient.IConnectionCallbacks, GoogleApiClient.IOnConnectionFailedListener
     {
+        int tapCounter = 0;
         GoogleApiClient client;
         const string syncPath = "/WearDemo/Data"; 
 
@@ -27,48 +26,35 @@ namespace WatchApp
 
             SetContentView(Resource.Layout.Main);
 
-            var v = FindViewById<WatchViewStub>(Resource.Id.watch_view_stub);
-
-            v.LayoutInflated += delegate
-            {
-                Button button = FindViewById<Button>(Resource.Id.myButton);
-
-                button.Click += delegate
-                {
-                    var notification = new NotificationCompat.Builder(this)
-                        .SetContentTitle("Button tapped")
-                        .SetContentText("Button tapped")
-                        .SetSmallIcon(Android.Resource.Drawable.StatNotifyVoicemail)
-                        .SetGroup("group_key_demo").Build();
-
-                    var manager = NotificationManagerCompat.From(this);
-                    manager.Notify(1, notification);
-                    button.Text = "Check Notification!";
-                };
-            };
+            Button button = FindViewById<Button>(Resource.Id.myButton);
+            button.Click += (sender, e) => SendData();
         }
 
         public void SendData()
         {
             try
             {
+                tapCounter++;
                 var request = PutDataMapRequest.Create(syncPath);
                 var map = request.DataMap;
-                map.PutString("Message", "Hello Wearable!");
+                map.PutString("Message", "Hello, Tap Counter value now at " + tapCounter);
                 map.PutLong("UpdatedAt", DateTime.UtcNow.Ticks);
                 WearableClass.DataApi.PutDataItem(client, request.AsPutDataRequest());
             }
-            finally
+            catch (Exception ex)
             {
-                client.Disconnect();
+                Android.Util.Log.Error("Exception Occurred: " + ex.Message, "watch");
             }
-
+            //Note: Uncomment only if you want to send a message only once
+            //finally
+            //{
+            //    client.Disconnect();
+            //}
         }
 
         protected override void OnStart()
         {
             client.Connect();
-
             base.OnStart();
         }
 
@@ -91,7 +77,6 @@ namespace WatchApp
         protected override void OnStop()
         {
             client.Disconnect();
-
             base.OnStop();
         }
 
